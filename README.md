@@ -41,10 +41,23 @@ make run
 docker compose up -d --build
 ```
 
-The mock clusters are now available at:
-*   `http://localhost:8006`
-*   `http://localhost:8007`
-*   `http://localhost:8008`
+## 🔗 How to Connect
+
+Because the mock server exposes ports `8006`, `8007`, and `8008` directly to the host, the connection URL depends on where your client/dashboard is running:
+
+1. **From a local program (same machine, no Docker):**
+   * `http://localhost:8006` (Milan)
+   * `http://localhost:8007` (Rome)
+   * `http://localhost:8008` (Naples)
+
+2. **From the outside (Browser, external server):**
+   Replace `localhost` with the public or LAN IP address of the host machine running the mock server.
+   * `http://<HOST-IP>:8006`
+
+3. **From another Docker container on the same host:**
+   * You can use the host's LAN IP address (`http://<HOST-IP>:8006`).
+   * Or, use the default Docker gateway IP (usually `http://172.17.0.1:8006` on Linux).
+   * Alternatively, configure `--add-host host.docker.internal:host-gateway` in your client container and use `http://host.docker.internal:8006`.
 
 ## 🔌 Supported API Endpoints
 
