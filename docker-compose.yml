@@ -1,0 +1,12 @@
+services:
+  mock-server:
+    build: .
+    ports:
+      - "8006:8006"
+      - "8007:8007"
+      - "8008:8008"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.80'
+          memory: 300M
