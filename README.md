@@ -9,7 +9,7 @@ A lightweight, high-performance FastAPI server that emulates the Proxmox VE REST
 
 Designed specifically for testing and demonstrating monitoring dashboards without needing a real, hardware-heavy Proxmox cluster.
 
-## ✨ Features (v2.0)
+## ✨ Features
 
 *   **Ultra Lightweight**: Runs 3 entire datacenter clusters inside a **single Python process** using `asyncio`, consuming only ~60MB of RAM.
 *   **Realistic Fluctuations**: No static data. Metrics dynamically change over time using deterministic mathematical waves.
